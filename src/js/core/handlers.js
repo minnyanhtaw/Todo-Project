@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
-import { createList } from "./functions.js";
-import { createListForm, listGroup } from "./selectors.js";
+import { createList, updateCountList } from "./functions.js";
+import { createListForm, listGroup, totalCount } from "./selectors.js";
 
 export const createListFormHandler = (event) => {
   event.preventDefault();
@@ -10,12 +10,14 @@ export const createListFormHandler = (event) => {
 
   listGroup.append(createList(textInput));
   createListForm.reset();
+  updateCountList();
 };
 
 export const checkList = (event) => {
   // console.log(event.target);
   const listText = event.target.nextElementSibling;
   listText.classList.toggle("line-through");
+  updateCountList();
 };
 
 export const deleteList = (event) => {
@@ -31,6 +33,7 @@ export const deleteList = (event) => {
   }).then((result) => {
     if (result.isConfirmed) {
       list.remove();
+      updateCountList();
     }
   });
 };
@@ -56,6 +59,7 @@ export const updateList = (event) => {
 
   listText.innerText = event.target.value;
   event.target.remove();
+  updateCountList();
 };
 
 export const listGroupHandler = (event) => {
