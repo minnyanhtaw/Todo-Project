@@ -5,3 +5,4 @@ export const createList = (text) => {
   list.querySelector(".list-text").innerText = text;
   return list;
 };
+

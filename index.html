@@ -43,16 +43,13 @@
         <div class="flex justify-between mb-5">
           <h2 class="font-bold text-zinc-700">Your List</h2>
           <p class="font-bold text-zinc-700">
-            Done(<span>0</span>/<span>0</span>)
+            Done(<span id="doneCount">0</span>/<span id="totalCount">0</span>)
           </p>
         </div>
 
         <div id="listGroup" class="flex flex-col gap-3">
-          <div class="hidden last:flex">
-            <img
-              src="./public/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_-1-_kf4d.svg"
-              alt=""
-            />
+          <div class="hidden last:flex justify-center items-center">
+            <img class="w-[300px]" src="/undraw_no_data_re_kwbl.svg" alt="">
           </div>
         </div>
       </div>
@@ -62,13 +59,15 @@
           class="list group overflow-hidden flex justify-between border-2 border-zinc-700 p-3"
         >
           <div class="flex items-center gap-2">
-            <input type="checkbox" class="w-4 h-4 accent-zinc-700" />
+            <input
+              type="checkbox"
+              class="list-checkbox w-4 h-4 accent-zinc-700"
+            />
             <label class="list-text" for="">List Text</label>
           </div>
           <div class="flex items-center gap-3">
             <button
-              id="list-edit-btn"
-              class="opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 duration-300 border-2 border-zinc-700 p-2"
+              class="list-edit-btn opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 duration-300 border-2 border-zinc-700 p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +85,7 @@
               </svg>
             </button>
             <button
-              id="list-del-btn"
-              class="translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 duration-300 border-2 border-zinc-700 p-2"
+              class="list-del-btn translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-0 duration-300 border-2 border-zinc-700 p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
